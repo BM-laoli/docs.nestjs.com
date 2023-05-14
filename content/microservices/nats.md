@@ -157,7 +157,7 @@ replaceEmoji(@Payload() data: string, @Ctx() context: NatsContext): string {
 @MessagePattern('replace-emoji')
 replaceEmoji(data, context) {
   const headers = context.getHeaders();
-  return headers['x-version'] === '1.0.0' ? '🐱' : '🐈';
+  return headers.get("x-version") === '1.0.0' ? '🐱' : '🐈';
 }
 ```
 
